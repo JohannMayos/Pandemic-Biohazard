@@ -6,6 +6,11 @@ public class Player : MonoBehaviour
 {
     public float speed;
     private Animator anim;
+    public GameObject bulletProjectile;
+    public Transform Gun;
+    private bool shot;
+    public float shotForce;
+    private bool flipX = false;
 
     void Start(){
 
@@ -17,15 +22,39 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        shot = Input.GetButtonDown("Fire1");
+        Shot();
     }
+
+    private void Shot(){
+        if(shot == true){
+            GameObject temp = Instantiate(bulletProjectile);
+            temp.transform.position = Gun.position;
+            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(shotForce, 0f);
+            Destroy(temp.gameObject, 1.5f);
+        }
+    }
+
+
+    private void FlipBullet(){
+
+        flipX = !flipX;
+        float x = transform.localScale.x;
+        x *= -1;
+        transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
+        shotForce *= -1;
+
+    }
+
 
     void Move(){
         Vector3 movement =  new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
         transform.position = transform.position + movement * speed * Time.deltaTime;
 
-        if(Input.GetAxis("Horizontal") > 0f){
+        if(flipX == true && Input.GetAxis("Horizontal") > 0f){
             anim.SetBool("Walk", true);
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            FlipBullet();
         }
 
         if(Input.GetAxis("Vertical") > 0f){
@@ -39,9 +68,10 @@ public class Player : MonoBehaviour
         }
 
 
-        if(Input.GetAxis("Horizontal") < 0f){
+        if(flipX == false && Input.GetAxis("Horizontal") < 0f){
             anim.SetBool("Walk", true);
-            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+           // transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            FlipBullet();
         }
 
         if(Input.GetAxis("Horizontal") == 0f){
