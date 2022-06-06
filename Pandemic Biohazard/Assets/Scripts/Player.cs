@@ -53,6 +53,13 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(col.gameObject.tag == "Traps"){
+            GameController.instance.ShowGameOver();
+            Destroy(gameObject);
+        }
+
+        
+
     }
 
 
