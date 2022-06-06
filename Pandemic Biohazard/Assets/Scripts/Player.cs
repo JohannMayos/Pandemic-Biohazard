@@ -46,6 +46,15 @@ public class Player : MonoBehaviour
 
     }
 
+    void OnCollisionEnter2D(Collision2D col){
+
+        if(col.gameObject.tag == "Enemy"){
+            GameController.instance.ShowGameOver();
+            Destroy(gameObject);
+        }
+
+    }
+
 
     void Move(){
         Vector3 movement =  new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);

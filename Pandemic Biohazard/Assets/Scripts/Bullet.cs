@@ -7,8 +7,9 @@ public class Bullet : MonoBehaviour
 
    private void onTriggerEnter2D(Collider2D col){
 
-       if(col.gameObject.CompareTag("Bullet")){
-           Destroy(col.gameObject);
-       }
+        if (col.gameObject.tag == "Bullet")
+        {
+            Destroy(col.gameObject);
+        }
    }
 }

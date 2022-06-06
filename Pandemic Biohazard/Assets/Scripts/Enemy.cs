@@ -67,4 +67,16 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+     void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Bullet")
+        {
+        
+            //GameController.instance.ShowGameOver();
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+            
+        }
+    }
 }
