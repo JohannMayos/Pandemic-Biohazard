@@ -28,4 +28,9 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(lvlName);
 
     }
+
+    public void QuitGame(){
+        UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit();
+    }
 }
