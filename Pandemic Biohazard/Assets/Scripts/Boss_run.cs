@@ -11,6 +11,7 @@ public class Boss_run : StateMachineBehaviour
     public float speed = 2.5f;
     Boss boss;
     
+    
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

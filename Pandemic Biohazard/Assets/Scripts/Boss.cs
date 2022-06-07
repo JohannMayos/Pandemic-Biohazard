@@ -22,25 +22,27 @@ public class Boss : MonoBehaviour
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        shot = true;
+        
     }
 
 
     public void LookAtPlayer(){
 
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
+        
+        shot = true;
 
-        if(transform.position.x > player.position.x && isFlipped){
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
+        if(transform.position.x > player.position.x && !isFlipped){
+           
+            FlipBullet();
+            //transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
         }
         else{
-            if(transform.position.x < player.position.x && !isFlipped){
-                transform.localScale = flipped;
-                transform.Rotate(0f,180f,0f);
-                isFlipped = true;
+            if(transform.position.x < player.position.x && isFlipped){
+                
+                FlipBullet();
+               // transform.Rotate(0f,0f,0f);
+                isFlipped = false;
                 
             }
         }
@@ -51,7 +53,7 @@ public class Boss : MonoBehaviour
             GameObject temp = Instantiate(bulletProjectile);
             temp.transform.position = Gun.position;
             temp.GetComponent<Rigidbody2D>().velocity = new Vector2(shotForce, 0f);
-            Destroy(temp.gameObject, 1.5f);
+            Destroy(temp.gameObject, 1f);
         }
     }
 
@@ -61,7 +63,7 @@ public class Boss : MonoBehaviour
         float x = transform.localScale.x;
         x *= -1;
         transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
-        shotForce *= 1;
+        shotForce *= -1;
 
     }
 
