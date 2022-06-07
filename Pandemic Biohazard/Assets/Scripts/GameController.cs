@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     public void ShowVictory()
     {
         victory.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void RestartGame(string lvlName)

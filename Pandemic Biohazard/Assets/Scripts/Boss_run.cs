@@ -7,7 +7,7 @@ public class Boss_run : StateMachineBehaviour
 
     Transform player;
     Rigidbody2D rb;
-    public float attackRange = 1f;
+    public float attackRange = 0.5f;
     public float speed = 2.5f;
     Boss boss;
     
