@@ -10,6 +10,7 @@ public class Boss_run : StateMachineBehaviour
     public float attackRange = 1f;
     public float speed = 2.5f;
     Boss boss;
+    
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,6 +30,7 @@ public class Boss_run : StateMachineBehaviour
 
         if(Vector2.Distance(player.position,rb.position) <= attackRange){
             animator.SetTrigger("Attack");
+            
         }
     }
 
@@ -36,7 +38,7 @@ public class Boss_run : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");
-        animator.ResetTrigger("Damage");
+        
     }
 
 }
