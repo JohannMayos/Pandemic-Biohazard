@@ -51,6 +51,7 @@ public class Boss : MonoBehaviour
     void Die(){
         anim.SetTrigger("Die");
         Destroy(gameObject, 0.9f);
+        GameController.instance.ShowVictory();
     }
 
      void OnTriggerEnter2D(Collider2D col)

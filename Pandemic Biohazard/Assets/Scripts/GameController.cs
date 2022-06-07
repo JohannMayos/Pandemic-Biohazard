@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
 
     public GameObject gameOver;
+    public GameObject victory;
 
     public static GameController instance;
 
@@ -21,6 +22,11 @@ public class GameController : MonoBehaviour
     public void ShowGameOver()
     {
         gameOver.SetActive(true);
+    }
+
+    public void ShowVictory()
+    {
+        victory.SetActive(true);
     }
 
     public void RestartGame(string lvlName)
