@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 
     public GameObject gameOver;
     public GameObject victory;
+    public GameObject Boss;
 
     public static GameController instance;
 
@@ -24,6 +25,10 @@ public class GameController : MonoBehaviour
         gameOver.SetActive(true);
     }
 
+    public void StartBoss(){
+        Boss.SetActive(true);
+    }
+
     public void ShowVictory()
     {
         victory.SetActive(true);
@@ -37,7 +42,7 @@ public class GameController : MonoBehaviour
     }
 
     public void QuitGame(){
-        UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }

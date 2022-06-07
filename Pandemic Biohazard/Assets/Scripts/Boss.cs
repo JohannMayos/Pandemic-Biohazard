@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
     public int currentHealth;
     public HealthBar healthbar;
     public GameObject bulletProjectile;
+    
     public Transform Gun;
     private bool shot;
     public float shotForce;
@@ -22,7 +23,6 @@ public class Boss : MonoBehaviour
         anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        
     }
 
 
@@ -34,14 +34,12 @@ public class Boss : MonoBehaviour
         if(transform.position.x > player.position.x && !isFlipped){
            
             FlipBullet();
-            //transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
         else{
             if(transform.position.x < player.position.x && isFlipped){
                 
                 FlipBullet();
-               // transform.Rotate(0f,0f,0f);
                 isFlipped = false;
                 
             }

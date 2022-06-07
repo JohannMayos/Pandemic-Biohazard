@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
             else
             {   
                 playerDestroyer = true;
-                //GameController.instance.ShowGameOver();
+                
                 Destroy(col.gameObject);
             }
         }
@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
         if(col.gameObject.tag == "Bullet")
         {
         
-            //GameController.instance.ShowGameOver();
+           
             Destroy(col.gameObject);
             Destroy(this.gameObject);
             

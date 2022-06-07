@@ -98,7 +98,6 @@ public class Player : MonoBehaviour
 
         if(flipX == false && Input.GetAxis("Horizontal") < 0f){
             anim.SetBool("Walk", true);
-           // transform.eulerAngles = new Vector3(0f, 180f, 0f);
             FlipBullet();
         }
 
