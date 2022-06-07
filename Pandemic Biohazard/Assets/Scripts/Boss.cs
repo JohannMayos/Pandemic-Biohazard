@@ -35,7 +35,6 @@ public class Boss : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
-            
         }
         else{
             if(transform.position.x < player.position.x && !isFlipped){
@@ -62,7 +61,7 @@ public class Boss : MonoBehaviour
         float x = transform.localScale.x;
         x *= -1;
         transform.localScale = new Vector3(x, transform.localScale.y, transform.localScale.z);
-        shotForce *= -1;
+        shotForce *= 1;
 
     }
 
