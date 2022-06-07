@@ -59,10 +59,10 @@ public class Boss : MonoBehaviour
         if(col.gameObject.tag == "Bullet")
         {
         
-            //GameController.instance.ShowGameOver();
+            
             Destroy(col.gameObject);
             TakeDamage(100);
-            //anim.SetBool("Damage", true);
+            
             
             
         }
