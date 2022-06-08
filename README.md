@@ -17,3 +17,13 @@ Você precisa parar esse experimento destruindo os laboratórios deles e dando u
 The game was developed in Top-Down Style highly influenced by Megaman Series.
 
 O jogo foi desenvolvido no estilo Top-Down, altamente influenciado pela Franquia Megaman.
+
+# Controls/Controles
+
+WASD/Up, Left, Right and Up Arrows to Move
+SPACE/Left Click to Shot
+Esc to Pause
+
+WASD/Cima, Esquerda, Direita e Cima para mover
+SPACE/Clique Esquerdo para Atirar
+Esc para Pausar
