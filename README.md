@@ -21,9 +21,13 @@ O jogo foi desenvolvido no estilo Top-Down, altamente influenciado pela Franquia
 # Controls/Controles
 
 WASD/Up, Left, Right and Up Arrows to Move
+
 SPACE/Left Click to Shot
+
 Esc to Pause
 
 WASD/Cima, Esquerda, Direita e Cima para mover
+
 SPACE/Clique Esquerdo para Atirar
+
 Esc para Pausar
